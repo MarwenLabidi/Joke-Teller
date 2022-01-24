@@ -4,6 +4,7 @@ const buttontellMe = document.querySelector('#tellMe');
 const data = await fetch('https://v2.jokeapi.dev/joke/Programming?type=single');
 const joke = await data.json();
 let jokePunchline = joke.joke;
+
 const speech = (data) => {
 	VoiceRSS.speech({
 		key: 'e8fba84f89544318b3e7ec3b1e529e83',
@@ -22,7 +23,7 @@ buttontellMe.addEventListener('click', () => {
 	//mouse click sound
 	const audio = new Audio('/Mouse-Click-00-c-FesliyanStudios.com.mp3');
 	audio.play();
-	
+
 	//tell me joke
 	speech(jokePunchline);
 })
