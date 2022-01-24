@@ -57,19 +57,6 @@ export default defineConfig({
 							}
 						}
 					},
-					{
-						handler: 'NetworkOnly',
-						urlPattern: /\/api\/.*\/*.json/,
-						method: 'POST',
-						options: {
-							backgroundSync: {
-								name: 'myQueueName',
-								options: {
-									maxRetentionTime: 24 * 60
-								}
-							}
-						}
-					}
 
 				]
 			}
