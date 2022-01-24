@@ -1,0 +1,45 @@
+main img{
+	margin-left:-200px;
+	margin-top:-80px;
+}
+
+main section {
+	font-size: clamp(10px, 2.5vw, 50px);
+	font-family: var(--ff_Raleway);
+	position:absolute;
+	top:30%;
+}
+main section button{
+	background-color:var(--clr_red);
+	border-radius:20px;
+	opacity:0.7;
+	width:50vw;
+	height:13vh;
+	font-size: clamp(20px, 2.5vw, 50px);
+	min-width:170px;
+	max-width:530px;
+}
+main section button:hover{
+	opacity:1;
+}
+main section button:active{
+	transform:scale(0.95);
+}
+
+@media(--tablets){
+	main img{
+		margin-left:-350px;
+		height:1200px;
+	}	
+	
+}
+@media(--desktop){
+	main img{
+		margin-top:-200px;
+	}
+	main section {
+		left:45%;
+	}
+	
+}
+
