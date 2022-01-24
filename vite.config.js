@@ -44,7 +44,7 @@ export default defineConfig({
 			registerType: 'autoUpdate',
 			workbox: {
 				runtimeCaching: [{
-						urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
+						urlPattern: / https:\/\/fonts\.gstatic\.com\/s\/raleway\/v22\/1Ptug8zYS_SKggPNyC0ITw\.woff2/i,
 						handler: 'CacheFirst',
 						options: {
 							cacheName: 'google-fonts-cache',
@@ -57,6 +57,19 @@ export default defineConfig({
 							}
 						}
 					},
+					{
+						handler: 'NetworkOnly',
+						urlPattern: /\/api\/.*\/*.json/,
+						method: 'POST',
+						options: {
+							backgroundSync: {
+								name: 'myQueueName',
+								options: {
+									maxRetentionTime: 24 * 60
+								}
+							}
+						}
+					}
 
 				]
 			}
