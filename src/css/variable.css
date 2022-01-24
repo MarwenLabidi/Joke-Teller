@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+:root{
+	--ff_Raleway:'Raleway', sans-serif;
+
+	--clr_white:hsl(0, 0%, 100%);
+	--clr_Dark:hsla(0, 0%, 0%)
+	--clr_grey:hsl(0, 0%, 75%);
+	--clr_green:hsl(145, 63%, 49%);
+}
+@custom-media --small (width <= 300px);
+@custom-media --tablets (width >= 450px);
+@custom-media --desktop (width >= 700px);
+@custom-media --desktop-large (width >= 1300px);
