@@ -1,9 +1,6 @@
 const buttontellMe = document.querySelector('#tellMe');
 
 // get the joke from joke api
-const data = await fetch('https://v2.jokeapi.dev/joke/Programming?type=single');
-const joke = await data.json();
-let jokePunchline = joke.joke;
 
 const speech = (data) => {
 	VoiceRSS.speech({
@@ -18,12 +15,21 @@ const speech = (data) => {
 	});
 }
 
+let jokePunchline = null
+
+const getJoke = async () => {
+	const data = await fetch('https://v2.jokeapi.dev/joke/Programming?type=single');
+	const joke = await data.json();
+	jokePunchline = joke.joke;
+}
+
 
 buttontellMe.addEventListener('click', () => {
 	//mouse click sound
 	const audio = new Audio('/Mouse-Click-00-c-FesliyanStudios.com.mp3');
 	audio.play();
-
 	//tell me joke
-	speech(jokePunchline);
+	getJoke().then(() => {
+		speech(jokePunchline);
+	})
 })
